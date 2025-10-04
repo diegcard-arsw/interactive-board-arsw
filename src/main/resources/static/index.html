@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tablero Colaborativo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>Tablero Colaborativo (p5.js + Spring Boot)</h1>
+</header>
+<main>
+    <section class="controls">
+        <button id="clearBtn">Borrar Tablero</button>
+        <span id="colorIndicator">Color: <span id="userColor"></span></span>
+        <span class="hint">(Dibuja manteniendo presionado el mouse o tu dedo en mobile)</span>
+    </section>
+    <section id="canvasWrapper"></section>
+</main>
+<footer>
+    <p>Actualización cada 1s - Ejemplo académico ARSW</p>
+</footer>
+<script src="js/sketch.js"></script>
+</body>
+</html>
