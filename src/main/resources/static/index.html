@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 </head>
 <body>
 <header>
@@ -13,14 +15,23 @@
 </header>
 <main>
     <section class="controls">
-        <button id="clearBtn">Borrar Tablero</button>
-        <span id="colorIndicator">Color: <span id="userColor"></span></span>
-        <span class="hint">(Dibuja manteniendo presionado el mouse o tu dedo en mobile)</span>
+        <div class="group">
+            <button id="clearBtn" class="danger">🧹 Borrar</button>
+            <button id="reloadBtn" title="Forzar sincronización">🔄 Sync</button>
+        </div>
+        <div class="group">
+            <span id="colorIndicator">Color: <span id="userColor"></span></span>
+            <span id="statusDot" class="status offline" title="Desconectado"></span>
+            <span id="statusText" class="status-text">Desconectado</span>
+        </div>
+        <div class="group stretch">
+            <span class="hint">Dibuja manteniendo pulsado (desktop o touch). Tiempo real via WebSockets; fallback a polling.</span>
+        </div>
     </section>
     <section id="canvasWrapper"></section>
 </main>
 <footer>
-    <p>Actualización cada 1s - Ejemplo académico ARSW</p>
+    <p>Tiempo real con STOMP sobre SockJS • Ejemplo académico ARSW</p>
 </footer>
 <script src="js/sketch.js"></script>
 </body>
